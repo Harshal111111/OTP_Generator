@@ -1,0 +1,8 @@
+<p>OTP: <%= @otp.now %></p>
+
+<%= form_with(model: @user, url: verify_otp_user_path(@user), method: :post, remote: true) do |form| %>
+  <%= form.label :otp %>
+  <%= form.text_field :otp %>
+
+  <%= form.submit 'Verify OTP' %>
+<% end %>
